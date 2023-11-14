@@ -12,5 +12,4 @@ def main():
     path = os.path.join(package_dir, "0_👋_Hello.py")
     os.system(f"streamlit run {path}")
 
-if st.button('Klik!'):
-    main()
+main()
