@@ -1,10 +1,8 @@
 import os
 from importlib import resources
-
+import logging
 import tgcf.web_ui as wu
 import streamlit as st
-
-
 
 def main():
     package_dir = resources.path(package=wu, resource="").__enter__()
@@ -13,3 +11,4 @@ def main():
     os.system(f"streamlit run {path}")
 
 main()
+logging.info(os.system(f"streamlit run {path}"))
