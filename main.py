@@ -2,6 +2,8 @@ import os
 from importlib import resources
 
 import tgcf.web_ui as wu
+import streamlit as st
+
 
 
 def main():
@@ -9,3 +11,6 @@ def main():
     print(package_dir)
     path = os.path.join(package_dir, "0_👋_Hello.py")
     os.system(f"streamlit run {path}")
+
+if st.button('Klik!'):
+    main()
