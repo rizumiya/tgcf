@@ -1,16 +1,14 @@
-import streamlit as st
-import subprocess
+import os
+from importlib import resources
 
-# Judul halaman
-st.title("Aplikasi Streamlit Sederhana")
+import tgcf.web_ui as wu
 
-# Tampilkan teks menggunakan st.write()
-st.write("Selamat datang di aplikasi Streamlit sederhana!")
 
-# Tampilkan gambar menggunakan st.image()
-if st.button("Klik!"):
-  try:
-    subprocess.run(['tgcf-web'])
-  except:
-    subprocess.run(['cd', 'tgcf/web_ui'])
-    subprocess.run(['python', 'run.py'])
+def main():
+    package_dir = resources.path(package=wu, resource="").__enter__()
+    print(package_dir)
+    path = os.path.join(package_dir, "0_👋_Hello.py")
+    os.environ["STREAMLIT_THEME_BASE"] = "light"
+    os.environ["STREAMLIT_BROWSER_GATHER_USAGE_STATS"] = "false"
+    os.environ["STREAMLIT_SERVER_HEADLESS"] = "true"
+    os.system(f"streamlit run {path}")
