@@ -10,6 +10,6 @@ def main():
     path = os.path.join(package_dir, "0_👋_Hello.py")
     os.system(f"streamlit run {path}")
 
-
-print("test", os.pwd())
+current_dir = os.getcwd()
+print("test", ocurrent_dir)
 main()
