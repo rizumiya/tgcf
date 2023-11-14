@@ -11,5 +11,5 @@ def main():
     os.system(f"streamlit run {path}")
 
 current_dir = os.getcwd()
-print("test", current_dir)
+st.caption(current_dir)
 main()
